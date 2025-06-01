@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /*若width設定300，那就是width+padding+margin=300*/
+    /*outline: solid 1px;*/
+    /*透過這行可以查看網頁空間是如何規劃的*/
+}
+
+img {
+    vertical-align: middle;
+    /*因為圖片是行內元素，會有對齊問題，所以圖片底部會有一點空白，加上這行後就不會了。跟改成區塊元素效果一樣，也不會底部有空白*/
+    max-width: 100%;
+    /*因為img預設不會去適應父容器的寬度，所以要設100%，強制讓他的寬度跟父容器一起伸縮，不然可能會超出範圍。rwd 必加*/
+    height: auto;
+}
+
+a {
+    display: inline-block;
+    /*讓他有區塊元素的特性*/
+}
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    /*sans-serif是通用字形，當前面的Noto Sans TC不能用時，會用sans-serif*/
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+
+
+
+.header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-bottom: solid 1px #000;
+}
+
+.page-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.page-list a {
+    text-decoration: none;
+    color: #000;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.theme {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1920px;
+    border-bottom: solid 1px #000;
+    margin-bottom: 80px;
+}
+
+.theme-img {
+    width: 50%;
+}
+
+.theme-content {
+    width: 50%;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.theme-content a {
+    text-decoration: none;
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.theme-content .special-article-tag {
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none;
+    background: #0027D5;
+    padding: 6px 12px;
+    border-radius: 40px;
+}
+
+.theme-content p {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+@media (max-width: 992px) {
+    .theme {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .theme-img {
+        width: 100%;
+    }
+
+    .theme-content {
+        width: 100%;
+        padding: 48px 12px;
+    }
+}
+
+.content {
+    max-width: 636px;
+    margin: 0 auto;
+}
+
+.content-block {
+    margin-bottom: 48px;
+}
+
+.content-title-h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0027D5;
+    margin-bottom: 24px;
+}
+
+.content-title-h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.content-block ol {
+    list-style: decimal;
+    margin-left: 1.5em;
+    /* 可選，增加縮排美觀 */
+}
+
+.content-block ul {
+    list-style: disc;
+    /* 使用黑色圓點 */
+    padding-left: 1.5em;
+    /* 加入縮排，否則圓點可能超出可視範圍 */
+}
+
+.content-container {
+    margin-bottom: 24px;
+}
+
+.content-container-gap {
+    margin-bottom: 8px;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.summary-box {
+    background-color: #EDEDED;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.summary-text {
+    font-weight: 700;
+}
+
+.tip-box {
+    background-color: #EDEDED;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.tip-text {
+    font-weight: 700;
+}
+
+.nav-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.nav-button {
+    border: 1px solid #000;
+    border-radius: 40px;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    background-color: blue;
+    color: #FFFFFF
+}
+
+.left-arrow::before {
+    content: "<";
+    margin-right: 8px;
+}
+
+.right-arrow::after {
+    content: ">";
+    margin-left: 8px;
+}
+
+@media (max-width: 992px) {
+    .content {
+        max-width: 351px;
+    }
+}
+
+.information {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    padding: 80px 312px;
+    border-top: #000 solid 1px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email {
+    font-size: 32px;
+    width: 1036px;
+}
+
+.information ul {
+    display: flex;
+    gap: 4px;
+}
+
+@media (max-width: 992px) {
+    .information {
+        display: none;
+    }
+}
+
+.copy-write {
+    max-width: 1920px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
